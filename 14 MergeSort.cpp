@@ -28,11 +28,11 @@ void merge(vector<int> &arr, int low, int high, int mid) {
 	}
 }
 void mergeSort(vector<int> &arr, int low, int high) {
-	if(low >= high) return;
-	int mid = (low+high)/2;
-	mergeSort(arr, low, mid);
-	mergeSort(arr, mid + 1, high);
-	merge(arr, low, high, mid);
+	if(low >= high) return;  //Base case: single element or invalid range
+	int mid = (low+high)/2;	
+	mergeSort(arr, low, mid);	// Recursively sort the left half
+	mergeSort(arr, mid + 1, high);	// Recursively sort the right half
+	merge(arr, low, high, mid);	// Merge the sorted halves
 }
 int main() {
 	vector<int> arr = {2,5,9,1,3,4};
