@@ -18,6 +18,8 @@ int main(){
     cout<<"Sting1: "<<str1<<endl;
     string str2 = "kamah";
     cout<<"String2: "<<str2<<endl;
+    transform(str1.begin(), str1.end(), str1.begin(), ::tolower);
+    transform(str2.begin(), str2.end(), str2.begin(), ::tolower);
     if(checkAnagrams(str1,str2)){
         cout<<"TRUE"<<endl;
     }else{
@@ -25,3 +27,11 @@ int main(){
     }
     return 0;
 }
+/*LINE 21 & 22
+"transform(input_begin, input_end, output_begin, operation);"
+
+input_begin: An iterator pointing to the start of the range you want to transform.
+input_end: An iterator pointing to one past the end of the range.
+output_begin: An iterator pointing to where the results will be stored (can be the same as the input if you want to modify the string in place).
+operation: A unary operation to apply to each element in the range (like converting to lowercase).
+*/
